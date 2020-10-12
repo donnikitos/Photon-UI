@@ -34,7 +34,8 @@ Several quick start options are available:
 
 Some code :)
 
-Provided are compiled CSS (`photon-ui.*`), as well as compiled and minified CSS (`photon-ui.min.*`). [source maps](https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps) (`photon-ui.*.map`) are available for use with certain browsers' developer tools.
+Also provided is compiled CSS (`photon-ui.*`), as well as compiled and minified CSS (`photon-ui.min.*`).
+[source maps](https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps) (`photon-ui.*.map`) are available for use with certain browsers' developer tools.
 
 
 ## Bugs and feature requests
