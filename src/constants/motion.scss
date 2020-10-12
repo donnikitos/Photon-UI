@@ -1,0 +1,44 @@
+$motion-timing: cubic-bezier(0.07, 0.95, 0, 1);
+
+
+@mixin newAnimation($aname) {
+	@-webkit-keyframes #{$aname} {
+		@content;
+	}
+
+	@-moz-keyframes #{$aname} {
+		@content;
+	}
+
+	@-ms-keyframes #{$aname} {
+		@content;
+	}
+
+	@-o-keyframes #{$aname} {
+		@content;
+	}
+
+	@keyframes #{$aname} {
+		@content;
+	}
+}
+
+@mixin animation($val...) {
+	-webkit-animation: $val;
+	-moz-animation: $val;
+	-ms-animation: $val;
+	animation: $val;
+
+	animation-timing-function: $motion-timing;
+}
+
+@mixin transition($args...) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	transition: $args;
+
+	transition-timing-function: $motion-timing;
+}
+
+@import '../animations/_index';

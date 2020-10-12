@@ -1,10 +1,13 @@
 @use 'sass:math';
 
 $_BaC-base: 11px;
+$_BaC-base: 12px;
 	$ratio-BaC: 1.15;
 $_TaD-base: 13px;
+$_TaD-base: 14px;
 	$ratio-TaD: 1.29;
 
+$typography-font: 'sans-serif';
 
 $typography-weight-display-20: 200;
 
@@ -70,15 +73,15 @@ $typography-weight-caption-10-bold: 700;
 	@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500;700&display=swap');
 }
 
-$typography-size-display-20: $_TaD-base * math.pow($ratio-TaD, 4);
-$typography-size-title-40: $_TaD-base * math.pow($ratio-TaD, 3);
-$typography-size-title-30: $_TaD-base * math.pow($ratio-TaD, 2);
-$typography-size-title-20: $_TaD-base * $ratio-TaD;
+$typography-size-display-20: math.round($_TaD-base * math.pow($ratio-TaD, 4));
+$typography-size-title-40: math.round($_TaD-base * math.pow($ratio-TaD, 3));
+$typography-size-title-30: math.round($_TaD-base * math.pow($ratio-TaD, 2));
+$typography-size-title-20: math.round($_TaD-base * $ratio-TaD);
 $typography-size-title-10: $_TaD-base;
-$typography-size-body-30: $_BaC-base * math.pow($ratio-BaC, 4);
-$typography-size-caption-30: $_BaC-base * math.pow($ratio-BaC, 2);
+$typography-size-body-30: math.round($_BaC-base * math.pow($ratio-BaC, 4));
+$typography-size-caption-30: math.round($_BaC-base * math.pow($ratio-BaC, 2));
 $typography-size-body-20: $typography-size-caption-30;
-$typography-size-caption-20: $_BaC-base * $ratio-BaC;
+$typography-size-caption-20: math.round($_BaC-base * $ratio-BaC);
 $typography-size-body-10: $typography-size-caption-20;
 $typography-size-caption-10: $_BaC-base;
 
@@ -88,3 +91,10 @@ $typography-color-primary-light: #0c0c0d;
 
 $typography-color-second-dark: #f9f9fa;
 $typography-color-second-light: #737373;
+
+
+html, body {
+	font-family: $typography-font;
+	font-size: $typography-size-body-10;
+	font-weight: $typography-weight-body-10;
+}

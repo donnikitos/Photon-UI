@@ -1,0 +1,72 @@
+@mixin _setHeight($height) {
+	height: $height;
+
+	line-height: $height;
+}
+
+@include newComponent('button') {
+	display: inline-block;
+
+	width: auto;
+	min-width: 132px;
+	@include _setHeight(32px);
+
+	padding-left: $grid-base*2;
+	padding-right: $grid-base*2;
+
+	cursor: pointer;
+
+	text-align: center;
+
+	color: getPaletteColor('grey', 90);
+	font-size: $typography-size-body-10;
+
+	background-color: getPaletteColor('grey', 90, 0.1);
+
+	border-radius: 2px;
+
+	&:focus:not(:active) {
+		box-shadow: 0 0 0 1px #0a84ff inset, 0 0 0 1px #0a84ff, 0 0 0 4px rgba(10, 132, 255, 0.3);
+	}
+
+	&:hover {
+		background-color: getPaletteColor('grey', 90, 0.2);
+	}
+
+	&:active {
+		background-color: getPaletteColor('grey', 90, 0.3);
+	}
+
+
+	&.micro {
+		@include _setHeight(24px);
+
+		font-size: $typography-size-caption-10;
+	}
+
+	&.puffy {
+		@include _setHeight(48px);
+
+		font-size: $typography-size-body-20;
+	}
+
+
+	&.primary {
+		color: getPaletteColor('white', 100);
+
+		background-color: getPaletteColor('blue', 60);
+
+
+		&:hover {
+			background-color: getPaletteColor('blue', 70);
+		}
+
+		&:active {
+			background-color: getPaletteColor('blue', 80);
+		}
+	}
+
+	&.disabled {
+		opacity: 40%;
+	}
+}

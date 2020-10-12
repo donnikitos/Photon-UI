@@ -1,18 +1,18 @@
 @use 'sass:map';
+@use 'sass:color';
 
 $_palettes: ();
-
 @mixin newPalette($palette, $colors) {
 	$_palettes: map.merge($_palettes, ($palette: $colors)) !global;
 }
 
-@import './color-palettes/_palettes';
+@import '../color-palettes/_index';
 
 
-@function getPaletteColor($palette, $color) {
+@function getPaletteColor($palette, $color, $alpha: 1) {
 	$pal: map.get($_palettes, $palette);
 
-	@return map.get($pal, $color);
+	@return color.change(map.get($pal, ''+$color), $alpha: $alpha);
 }
 
 $theme-dark: (
