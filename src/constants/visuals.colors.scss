@@ -6,10 +6,7 @@ $_palettes: ();
 	$_palettes: map.merge($_palettes, ($palette: $colors)) !global;
 }
 
-@import './color-palettes/blue.scss';
-@import './color-palettes/grey.scss';
-@import './color-palettes/ink.scss';
-@import './color-palettes/white.scss';
+@import './color-palettes/_palettes';
 
 
 @function getPaletteColor($palette, $color) {

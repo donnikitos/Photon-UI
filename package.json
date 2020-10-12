@@ -5,8 +5,7 @@
 	"scripts": {
 		"build": "sass ./src/main.scss:build/photon-style.css"
 	},
-	"keywords": [],
-	"author": "donnikitos <me@donnikitos.com> (https://donnikitos.com)",
+	"author": "Nikita Nitichevski <me@donnikitos.com> (https://donnikitos.com)",
 	"license": "MIT",
 	"devDependencies": {
 		"sass": "^1.27.0"
