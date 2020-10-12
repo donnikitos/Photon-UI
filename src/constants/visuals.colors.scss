@@ -1,0 +1,31 @@
+@use 'sass:map';
+
+$_palettes: ();
+
+@mixin newPalette($palette, $colors) {
+	$_palettes: map.merge($_palettes, ($palette: $colors)) !global;
+}
+
+@import './color-palettes/blue.scss';
+@import './color-palettes/grey.scss';
+@import './color-palettes/ink.scss';
+@import './color-palettes/white.scss';
+
+
+@function getPaletteColor($palette, $color) {
+	$pal: map.get($_palettes, $palette);
+
+	@return map.get($pal, $color);
+}
+
+$theme-dark: (
+	'back': getPaletteColor('grey', 90),
+	'mid': getPaletteColor('grey', 70),
+	'front': getPaletteColor('grey', 60)
+);
+
+$theme-light: (
+	'back': getPaletteColor('grey', 30),
+	'mid': getPaletteColor('grey', 10),
+	'front': getPaletteColor('white', 100)
+);
