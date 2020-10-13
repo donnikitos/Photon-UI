@@ -1,0 +1,7 @@
+@include newTheme('sky', (
+	'back': getPaletteColor('ink', 90),
+	'mid': getPaletteColor('ink', 70),
+	'front': lighten(getPaletteColor('blue', 40), 25%),
+	'icons': getPaletteColor('grey', 90, 0.8),
+	'secondary-icons': getPaletteColor('grey', 90, 0.6)
+));

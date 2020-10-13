@@ -1,0 +1,7 @@
+@include newTheme('light', (
+	'back': getPaletteColor('grey', 30),
+	'mid': getPaletteColor('grey', 20),			// Should be technically Grey 10 🤔
+	'front': getPaletteColor('white', 100),
+	'icons': getPaletteColor('grey', 90, 0.8),
+	'secondary-icons': getPaletteColor('grey', 90, 0.6)
+));

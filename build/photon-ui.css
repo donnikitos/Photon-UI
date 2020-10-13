@@ -90,10 +90,6 @@ html, body {
   font-weight: 400;
 }
 
-.photon-body {
-  padding: 8px;
-}
-
 .photon-button {
   display: inline-block;
   width: auto;
@@ -204,6 +200,43 @@ html, body {
 
 .photon-spacing.margin-vertical-3, .photon-spacing.margin-vertical-3-bottom {
   margin-bottom: 12px;
+}
+
+.photon-window {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 4px;
+  justify-content: center;
+  align-content: stretch;
+  align-items: stretch;
+  background-color: #d7d7db;
+}
+.photon-window > * {
+  flex-grow: 0;
+  padding: 4px;
+}
+.photon-window-titlebar {
+  height: 40px;
+  background-color: #d7d7db;
+}
+.photon-window-menubar {
+  background-color: #ededf0;
+}
+.photon-window-toolbar {
+  height: 40px;
+  background-color: #ededf0;
+}
+.photon-window-body {
+  flex-grow: 1;
+  overflow: auto;
+  background-color: white;
+  border-left: 4px solid #ededf0;
+  border-right: 4px solid #ededf0;
+}
+.photon-window-statusbar {
+  height: 24px;
+  background-color: #ededf0;
 }
 
 /*# sourceMappingURL=photon-ui.css.map */

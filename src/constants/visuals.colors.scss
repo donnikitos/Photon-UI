@@ -8,21 +8,22 @@ $_palettes: ();
 
 @import '../color-palettes/_index';
 
-
 @function getPaletteColor($palette, $color, $alpha: 1) {
 	$pal: map.get($_palettes, $palette);
 
 	@return color.change(map.get($pal, ''+$color), $alpha: $alpha);
 }
 
-$theme-dark: (
-	'back': getPaletteColor('grey', 90),
-	'mid': getPaletteColor('grey', 70),
-	'front': getPaletteColor('grey', 60)
-);
 
-$theme-light: (
-	'back': getPaletteColor('grey', 30),
-	'mid': getPaletteColor('grey', 10),
-	'front': getPaletteColor('white', 100)
-);
+$_themes: ();
+@mixin newTheme($name, $colors) {
+	$_themes: map.merge($_themes, ($name: $colors)) !global;
+}
+
+@import '../themes/_index';
+
+@function getThemeColor($name, $field, $alpha: 1) {
+	$col: map.get($_themes, $name);
+
+	@return color.change(map.get($col, $field), $alpha: $alpha);
+}

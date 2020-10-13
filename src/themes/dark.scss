@@ -1,0 +1,7 @@
+@include newTheme('dark', (
+	'back': getPaletteColor('grey', 90),
+	'mid': getPaletteColor('grey', 70),
+	'front': getPaletteColor('grey', 60),
+	'icons': getPaletteColor('grey', 10, 0.8),
+	'secondary-icons': getPaletteColor('grey', 10, 0.6)
+));

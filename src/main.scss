@@ -5,4 +5,8 @@ $env: 'web';
 // $env: 'android';
 // $env: 'ios';
 
+$env-theme: 'light';
+// $env-theme: 'dark';
+// $env-theme: 'sky';
+
 @import './constants/_index';

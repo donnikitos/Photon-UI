@@ -1,0 +1,70 @@
+@mixin padding() {
+	padding: $grid-base;
+}
+@mixin border($x: true, $y: true, $color: getThemeColor($env-theme, 'back')) {
+	@if $x {
+		border-left: $grid-base solid $color;
+		border-right: $grid-base solid $color;
+	}
+	@if $y {
+		border-top: $grid-base solid $color;
+		border-bottom: $grid-base solid $color;
+	}
+}
+
+@include newComponentStyle('window') {
+	display: flex;
+
+	flex-direction: column;
+	flex-wrap: nowrap;
+
+	padding: $grid-base;
+
+	justify-content: center;
+	align-content: stretch;
+	align-items: stretch;
+
+	background-color: getThemeColor($env-theme, 'back');
+
+
+	& > * {
+		flex-grow: 0;
+
+		@include padding;
+	}
+
+	&-titlebar {
+		height: $grid-base*10;
+
+		background-color: getThemeColor($env-theme, 'back');
+	}
+
+	&-menubar {
+		background-color: getThemeColor($env-theme, 'mid');
+	}
+
+	&-toolbar {
+		height: $grid-base*10;
+
+		background-color: getThemeColor($env-theme, 'mid');
+	}
+
+	&-body {
+		flex-grow: 1;
+
+		overflow: auto;
+
+		background-color: getThemeColor($env-theme, 'front');
+
+		// border-top: 1px solid getThemeColor($env-theme, 'back');
+		border-left: $grid-base solid getThemeColor($env-theme, 'mid');
+		border-right: $grid-base solid getThemeColor($env-theme, 'mid');
+		// border-bottom: 1px solid getThemeColor($env-theme, 'back');
+	}
+
+	&-statusbar {
+		height: $grid-base*6;
+
+		background-color: getThemeColor($env-theme, 'mid');
+	}
+}
