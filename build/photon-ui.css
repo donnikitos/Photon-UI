@@ -90,6 +90,10 @@ html, body {
   font-weight: 400;
 }
 
+.photon-body {
+  padding: 8px;
+}
+
 .photon-button {
   display: inline-block;
   width: auto;
@@ -105,13 +109,13 @@ html, body {
   background-color: rgba(12, 12, 13, 0.1);
   border-radius: 2px;
 }
-.photon-button:focus:not(:active) {
+.photon-button:not(.disabled):focus:not(:active) {
   box-shadow: 0 0 0 1px #0a84ff inset, 0 0 0 1px #0a84ff, 0 0 0 4px rgba(10, 132, 255, 0.3);
 }
-.photon-button:hover {
+.photon-button:not(.disabled):hover {
   background-color: rgba(12, 12, 13, 0.2);
 }
-.photon-button:active {
+.photon-button:not(.disabled):active {
   background-color: rgba(12, 12, 13, 0.3);
 }
 .photon-button.micro {
@@ -124,18 +128,82 @@ html, body {
   line-height: 48px;
   font-size: 16px;
 }
+.photon-button.disabled {
+  opacity: 40%;
+}
 .photon-button.primary {
   color: white;
   background-color: #0060df;
 }
-.photon-button.primary:hover {
+.photon-button.primary:not(.disabled):hover {
   background-color: #003eaa;
 }
-.photon-button.primary:active {
+.photon-button.primary:not(.disabled):active {
   background-color: #002275;
 }
-.photon-button.disabled {
-  opacity: 40%;
+
+.photon-spacing.padding-vertical, .photon-spacing.padding-vertical-top {
+  padding-top: 4px;
+}
+
+.photon-spacing.padding-vertical, .photon-spacing.padding-vertical-bottom {
+  padding-bottom: 4px;
+}
+
+.photon-spacing.padding-vertical-2, .photon-spacing.padding-vertical-2-top {
+  padding-top: 8px;
+}
+
+.photon-spacing.padding-vertical-2, .photon-spacing.padding-vertical-2-bottom {
+  padding-bottom: 8px;
+}
+
+.photon-spacing.padding-horizontal-2, .photon-spacing.padding-horizontal-2-left {
+  padding-left: 8px;
+}
+
+.photon-spacing.padding-horizontal-2, .photon-spacing.padding-horizontal-2-right {
+  padding-right: 8px;
+}
+
+.photon-spacing.padding-vertical-3, .photon-spacing.padding-vertical-3-top {
+  padding-top: 12px;
+}
+
+.photon-spacing.padding-vertical-3, .photon-spacing.padding-vertical-3-bottom {
+  padding-bottom: 12px;
+}
+
+.photon-spacing.margin-vertical, .photon-spacing.margin-vertical-top {
+  margin-top: 4px;
+}
+
+.photon-spacing.margin-vertical, .photon-spacing.margin-vertical-bottom {
+  margin-bottom: 4px;
+}
+
+.photon-spacing.margin-vertical-2, .photon-spacing.margin-vertical-2-top {
+  margin-top: 8px;
+}
+
+.photon-spacing.margin-vertical-2, .photon-spacing.margin-vertical-2-bottom {
+  margin-bottom: 8px;
+}
+
+.photon-spacing.margin-horizontal-2, .photon-spacing.margin-horizontal-2-left {
+  margin-left: 8px;
+}
+
+.photon-spacing.margin-horizontal-2, .photon-spacing.margin-horizontal-2-right {
+  margin-right: 8px;
+}
+
+.photon-spacing.margin-vertical-3, .photon-spacing.margin-vertical-3-top {
+  margin-top: 12px;
+}
+
+.photon-spacing.margin-vertical-3, .photon-spacing.margin-vertical-3-bottom {
+  margin-bottom: 12px;
 }
 
 /*# sourceMappingURL=photon-ui.css.map */

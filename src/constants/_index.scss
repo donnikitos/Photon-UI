@@ -117,7 +117,7 @@ button {
 
 $css-base-name: 'photon';
 
-@mixin newComponent($name) {
+@mixin newComponentStyle($name) {
 	.#{$css-base-name}-#{$name} {
 		@content;
 	};

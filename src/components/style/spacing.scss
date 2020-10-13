@@ -1,0 +1,42 @@
+@mixin _spacingGenerator($prop, $direction, $multiplier: 1) {
+	$a: 'left';
+	$b: 'right';
+	$multiplierName: '';
+	@if $direction == 'vertical' {
+		$a: 'top';
+		$b: 'bottom';
+	}
+	@if $multiplier > 1 {
+		$multiplierName: '-' + $multiplier;
+	}
+
+	&.#{$prop}-#{$direction}#{$multiplierName} {
+		@extend %#{$prop}-#{$direction}-#{$a}-#{$multiplierName};
+		@extend %#{$prop}-#{$direction}-#{$b}-#{$multiplierName};
+
+		&-#{$a} {
+			@extend %#{$prop}-#{$direction}-#{$a}-#{$multiplierName};
+		}
+		&-#{$b} {
+			@extend %#{$prop}-#{$direction}-#{$b}-#{$multiplierName};
+		}
+	}
+	@at-root %#{$prop}-#{$direction}-#{$a}-#{$multiplierName} {
+		#{$prop}-#{$a}: $grid-base*$multiplier;
+	}
+	@at-root %#{$prop}-#{$direction}-#{$b}-#{$multiplierName} {
+		#{$prop}-#{$b}: $grid-base*$multiplier;
+	}
+}
+
+@include newComponentStyle('spacing') {
+	@include _spacingGenerator('padding', 'vertical', 1);
+	@include _spacingGenerator('padding', 'vertical', 2);
+	@include _spacingGenerator('padding', 'horizontal', 2);
+	@include _spacingGenerator('padding', 'vertical', 3);
+
+	@include _spacingGenerator('margin', 'vertical', 1);
+	@include _spacingGenerator('margin', 'vertical', 2);
+	@include _spacingGenerator('margin', 'horizontal', 2);
+	@include _spacingGenerator('margin', 'vertical', 3);
+}

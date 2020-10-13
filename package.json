@@ -3,8 +3,9 @@
 	"version": "1.0.0",
 	"description": "Principles applied by the Mozilla Photon guide, to design and build the next generation of Firefox-related and other products.",
 	"scripts": {
-		"build": "sass ./src/main.scss:build/photon-ui.css",
-		"build-min": "sass ./src/main.scss:build/photon-ui.min.css --style compressed"
+		"build": "npx sass ./src/main.scss:build/photon-ui.css",
+		"build-watch": "npx sass ./src/main.scss:build/photon-ui.css --watch",
+		"build-min": "npx sass ./src/main.scss:build/photon-ui.min.css --style compressed"
 	},
 	"author": "Nikita Nitichevski <me@donnikitos.com> (https://donnikitos.com)",
 	"license": "MIT",

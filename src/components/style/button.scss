@@ -4,7 +4,7 @@
 	line-height: $height;
 }
 
-@include newComponent('button') {
+@include newComponentStyle('button') {
 	display: inline-block;
 
 	width: auto;
@@ -25,16 +25,18 @@
 
 	border-radius: 2px;
 
-	&:focus:not(:active) {
-		box-shadow: 0 0 0 1px #0a84ff inset, 0 0 0 1px #0a84ff, 0 0 0 4px rgba(10, 132, 255, 0.3);
-	}
+	&:not(.disabled) {
+		&:focus:not(:active) {
+			box-shadow: 0 0 0 1px #0a84ff inset, 0 0 0 1px #0a84ff, 0 0 0 4px rgba(10, 132, 255, 0.3);
+		}
 
-	&:hover {
-		background-color: getPaletteColor('grey', 90, 0.2);
-	}
+		&:hover {
+			background-color: getPaletteColor('grey', 90, 0.2);
+		}
 
-	&:active {
-		background-color: getPaletteColor('grey', 90, 0.3);
+		&:active {
+			background-color: getPaletteColor('grey', 90, 0.3);
+		}
 	}
 
 
@@ -50,6 +52,10 @@
 		font-size: $typography-size-body-20;
 	}
 
+	&.disabled {
+		opacity: 40%;
+	}
+
 
 	&.primary {
 		color: getPaletteColor('white', 100);
@@ -57,16 +63,14 @@
 		background-color: getPaletteColor('blue', 60);
 
 
-		&:hover {
-			background-color: getPaletteColor('blue', 70);
-		}
+		&:not(.disabled) {
+			&:hover {
+				background-color: getPaletteColor('blue', 70);
+			}
 
-		&:active {
-			background-color: getPaletteColor('blue', 80);
+			&:active {
+				background-color: getPaletteColor('blue', 80);
+			}
 		}
-	}
-
-	&.disabled {
-		opacity: 40%;
 	}
 }
